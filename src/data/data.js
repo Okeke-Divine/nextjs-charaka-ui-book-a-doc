@@ -20,6 +20,17 @@ export const searchResults = [
         liked: true,
         bookedInThePast: false,
         hasAppointment: true,
+    },
+    {
+        name: "Steven Weiner, MD",
+        career: "Primary Care Doctor",
+        address: "52087 Toney Neck Suite 296",
+        rating: 5.00,
+        reviewsCount: 99,
+        avartarText: "Dyson, and 2+ insurance acepted",
+        liked: false,
+        bookedInThePast: true,
+        hasAppointment: false,
     }
 ]
 

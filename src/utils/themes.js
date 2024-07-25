@@ -15,7 +15,8 @@ const theme = extendTheme({
       whiteSmoke: '#fcfcfc',
       pink: '#f62e7f',
       lightPink: '#f393b1',
-      peachPuff: '#f8dfc0',
+      peachPuff: 'rgb(254,240,199)',
+      peachPuff2: 'rgb(220,104,3)',
     },
   },
   components: {

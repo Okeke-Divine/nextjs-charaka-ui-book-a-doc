@@ -26,7 +26,7 @@ export default function SearchSection() {
             </Box>
 
             {/* search result */}
-            <Box display={{ sm: "block", lg: "flex" }} gap={10}>
+            <Box display={{ sm: "block", lg: "flex" }} gap={10} mt="20px">
                 <Box flex={{ base: "1", lg: "3" }}>
                     <SearchResults />
                 </Box>
