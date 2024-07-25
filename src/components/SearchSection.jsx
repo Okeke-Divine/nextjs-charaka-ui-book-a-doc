@@ -1,8 +1,9 @@
+import { searchResults } from "@/data/data"
 import { Link } from "@chakra-ui/next-js";
 import { Box, Divider, Heading, Text } from "@chakra-ui/react";
 import SearchFilter from "./SearchFilter";
 import SearchMap from "./SearchMap";
-import SearchResults from "./SearchResults";
+import SearchResult from "./SearchResult";
 
 export default function SearchSection() {
     return (
@@ -28,7 +29,9 @@ export default function SearchSection() {
             {/* search result */}
             <Box display={{ sm: "block", lg: "flex" }} gap={10} mt="20px">
                 <Box flex={{ base: "1", lg: "3" }}>
-                    <SearchResults />
+                    {searchResults.map((result, index) => (
+                        <SearchResult result={result} key={index} />
+                    ))}
                 </Box>
                 <Box flex={{ base: "1", lg: "1" }}>
                     <SearchMap />

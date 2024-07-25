@@ -95,7 +95,7 @@ export default function SearchFilter() {
 
 
     return (
-        <Box borderRadius={"20px"} border={"1px"} borderColor={"gray.200"} p="20px">
+        <Box borderRadius={"20px"} border={"1px"} borderColor={"gray.100"} p="20px">
 
             <Text fontWeight="bold" fontSize={"18px"}>
                 All Filter

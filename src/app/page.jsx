@@ -9,7 +9,9 @@ export default function Home() {
     <>
       <Box px={{ sm: "10px", md: "15px", lg: "20px" }} pt="20px">
         <Header />
-        <SearchSection />
+        <Box px="20px">
+          <SearchSection />
+        </Box>
       </Box>
       <Footer />
     </>
