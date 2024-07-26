@@ -1,7 +1,7 @@
 import { HiMiniMapPin } from "react-icons/hi2";
 import { CalendarIcon, InfoOutlineIcon, StarIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
-import { Avatar, AvatarGroup, Box, Button, Card, Divider, Icon, Text } from "@chakra-ui/react";
+import { Avatar, AvatarGroup, Box, Button, Card, Divider, Flex, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import DoctorPicure from "./DoctorPicure";
 import DateTime from "./DateTime";
@@ -89,7 +89,7 @@ export default function SearchResult({ result }) {
               </Box>
             </Box>
 
-            <Box gap={2} justifyContent={"end"} display={"flex"} flex={{ base: "1", lg: "2" }} flexWrap={"wrap"}>
+            <Box gap={2} mt={"10px"} display={"flex"} flex={{ base: "1", lg: "2" }}>
 
               <Button display={"flex"} gap={2} bg="white" borderRadius={"full"} border="1px" borderColor={"gray.100"}><InfoOutlineIcon /> More Info</Button>
 
@@ -104,7 +104,9 @@ export default function SearchResult({ result }) {
         </Box>
 
         {/* Date and Time Selection Component */}
-       <DateTime result={result} />
+        <Box p={1}>
+          <DateTime result={result} />
+        </Box>
       </Card>
     </>
   );

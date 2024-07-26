@@ -12,7 +12,8 @@ export default function Header() {
             bg="linear-gradient(14deg, rgba(246,227,243,1) 0%, rgba(236,241,245,1) 58%);"
             py={4}
             borderRadius={"20px"}
-            px={{ sm: "10px", lg: '20px' }}
+            px={"10vw"}
+            // px={{ sm: "10px", lg: '20px' }}
         >
             <Flex justify="space-between" align="center">
                 <Flex align="center" gap="2">
@@ -21,13 +22,15 @@ export default function Header() {
                         BookADoc
                     </Text>
                 </Flex>
-                <Flex gap="4" display={{ sm: "hidden", lg: "flex" }}>
+                <Box gap="4" 
+                 display={{ base: "none", lg: "flex" }}
+                 >
                     <Link href="#">Services <ChevronDownIcon /> </Link>
                     <Link href="#">Doctors <ChevronDownIcon /> </Link>
                     <Link href="#">About Us</Link>
                     <Link href="#">Blog</Link>
                     <Link href="#">Contact Us</Link>
-                </Flex>
+                </Box>
                 <Flex gap="4">
                     <Button bg="white" borderRadius={"full"} px="20px" py="7px">Sign In</Button>
                     <Button bg="white" borderRadius={"full"} px="20px" py="7px">Clinic Sign Up</Button>

@@ -4,7 +4,7 @@ import Logo from "./logo";
 
 export default function Footer() {
     return (
-        <Box bg='brand.charcoal' py={{sm: 30, lg: 50}} px={{ sm: 20, md: 30, lg: 100 }}>
+        <Box bg='brand.charcoal' py="5vh" px={"10vw"}>
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={10} pb="20px" color={"gray.200"}>
                 <Box>
                     <Box display="flex" gap="2" alignItems={"center"}>
