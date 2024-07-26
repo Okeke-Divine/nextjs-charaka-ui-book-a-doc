@@ -1,6 +1,6 @@
-import { InfoOutlineIcon } from "@chakra-ui/icons"
+import { CalendarIcon, InfoOutlineIcon, StarIcon } from "@chakra-ui/icons"
 import { Link } from "@chakra-ui/next-js"
-import { Avatar, AvatarGroup, Box, Card, Text } from "@chakra-ui/react"
+import { Avatar, AvatarGroup, Box, Button, Card, Text } from "@chakra-ui/react"
 
 export default function SearchResult({ result }) {
   return (
@@ -29,21 +29,39 @@ export default function SearchResult({ result }) {
           <Box flex={{ base: "1", lg: "1" }}>
             <Avatar bg="gray.200" src={result.img} name={result.name} w='full' h='full' borderRadius={"20px"} mb={{ sm: "10px", lg: "0px" }} />
           </Box>
+
           <Box flex={{ base: "1", lg: "5" }}>
             <Text fontWeight={"bold"} fontSize={"20px"}>{result.name}</Text>
-            <Box color="gray.600" >
-              <Text fontSize={"16px"}>{result.career}</Text>
-              <Box>
+            <Box color="gray.600" fontWeight={550} >
+              <Text fontSize={"16px"} mt="2px">{result.career}</Text>
+              <Box mt="10px">
                 <Text fontSize={"16px"}>{result.address}</Text>
               </Box>
               {/* review */}
+              <Box display={"flex"} gap={2} alignItems={"center"} mt="10px">
+                <Box
+                  bg="orange.100"
+                  color="orange.500"
+                  py={1}
+                  px={3}
+                  borderRadius="10px"
+                  fontSize="sm"
+                  display="flex"
+                  alignItems="center"
+                >
+                  <StarIcon boxSize={3} mr={1} />
+                  {result.rating}
+                </Box>
+                <Text textDecoration={"underline"}>({result.reviewsCount} reviews)</Text>
+              </Box>
 
-              <Box mt="5px" display={"flex"} gap={2} flexWrap={"wrap"} alignItems={"center"}>
-                <AvatarGroup size='sm' max={2}>
-                  <Avatar name='Ryan Florence' src='/images/img1.png' />
-                  <Avatar name='Ryan Florence' src='/images/img2.png' />
-                  <Avatar name='Ryan Florence' src='/images/img3.png' />
-                  <Avatar name='Ryan Florence' src='/images/img4.png' />
+              {/* Avatar group */}
+              <Box mt="5px" display={"flex"} gap={3} flexWrap={"wrap"} alignItems={"center"}>
+                <AvatarGroup size='sm' max={3}>
+                  <Avatar name='User' src='/images/img1.png' />
+                  <Avatar name='Second User' src='/images/img2.png' />
+                  <Avatar name='My Name' src='/images/img3.png' />
+                  <Avatar name='Full Name' src='/images/img4.png' />
                 </AvatarGroup>
                 <Box>
                   {result.avartarText}
@@ -52,6 +70,17 @@ export default function SearchResult({ result }) {
 
             </Box>
           </Box>
+
+          <Box gap={2} justifyContent={"end"} display={"flex"} flex={{ base: "1", lg: "2" }}>
+          
+            <Button display={"flex"} gap={2} bg="white" borderRadius={"full"} border="1px" borderColor={"gray.100"}><InfoOutlineIcon /> More Info</Button>
+          
+            {result?.cantBook == true ? "" : (<>
+              <Button display={"flex"} gap={2} bg="brand.charcoal" color="white" borderRadius={"full"} border="1px" borderColor={"gray.100"}><CalendarIcon /> Book {result.bookedInThePast ? "Again" : "Appointment"}</Button>
+            </>)}
+
+          </Box>
+
         </Box>
       </Card>
     </>
