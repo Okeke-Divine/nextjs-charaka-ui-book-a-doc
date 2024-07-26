@@ -7,7 +7,7 @@ import { Box } from '@chakra-ui/react';
 export default function Home() {
   return (
     <>
-      <Box px={{ sm: "10px", md: "15px", lg: "20px" }} pt={{sm: "20px", lg:"20px"}}>
+      <Box px={"2vw"} pt={"20px"}>
         <Header />
         <Box px="20px">
           <SearchSection />
