@@ -41,7 +41,8 @@ export default function Header() {
                     borderRadius="full"
                     boxShadow="md"
                     align="center"
-                    p="3"
+                    px={5}
+                    py={3}
                     gap="2"
                 >
                     <Box w="full" display={"flex"} alignItems={"center"}>
@@ -107,6 +108,9 @@ export default function Header() {
                 </Flex>
             </Flex>
             <Spacer h="10px" />
+            {/* <Text fontSize={{ base: '40px', md: '90px', lg: '156px' }}> */}
+                {/* This is responsive text */}
+            {/* </Text> */}
         </Box>
     );
 }
