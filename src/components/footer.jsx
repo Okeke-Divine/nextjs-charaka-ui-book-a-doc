@@ -40,7 +40,7 @@ export default function Footer() {
                 </Box>
             </SimpleGrid>
 
-            <Divider />
+            <Divider borderColor="gray.700" />
 
             <Box color={'gray.500'} pt='20px'>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate officiis est ex blanditiis tenetur veritatis atque odit, eos illum voluptatum soluta impedit excepturi corporis error exercitationem eius? Id, ut dignissimos.

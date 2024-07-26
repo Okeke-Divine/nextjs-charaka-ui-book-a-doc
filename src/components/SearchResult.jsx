@@ -4,20 +4,11 @@ import { Link } from "@chakra-ui/next-js";
 import { Avatar, AvatarGroup, Box, Button, Card, Divider, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import DoctorPicure from "./DoctorPicure";
+import DateTime from "./DateTime";
 
 export default function SearchResult({ result }) {
 
   const [isLiked, setIsLiked] = useState(result.liked);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  const handleTimeChange = (time) => {
-    setSelectedTime(time);
-  };
 
   return (
     <>
@@ -53,7 +44,7 @@ export default function SearchResult({ result }) {
         <Box display={{ sm: "block", lg: "flex" }} gap={5}>
           <Box flex={{ base: "1", lg: "" }} minWidth={"250px"}>
             <DoctorPicure result={result} />
-            <Divider h={{ sm: "20px", lg: "0px" }} />
+            {/* <Divider h={{ sm: "20px", lg: "0px" }} /> */}
           </Box>
 
           <Box display={{ sm: "block", lg: "flex" }} justifyContent={"space-between"} flex={{ base: "1", lg: "5" }}>
@@ -113,25 +104,7 @@ export default function SearchResult({ result }) {
         </Box>
 
         {/* Date and Time Selection Component */}
-        <Box mt="20px">
-          <Text fontWeight={"bold"} fontSize={"16px"} mb="10px">Select Date and Time:</Text>
-          <Box display="flex" flexWrap="wrap" gap={2}>
-            {result.availableDates.map((date, index) => (
-              <Button key={index} onClick={() => handleDateChange(date)} bg={selectedDate === date ? "purple.400" : "gray.100"} color={selectedDate === date ? "white" : "black"}>
-                {date}
-              </Button>
-            ))}
-          </Box>
-          {selectedDate && (
-            <Box mt="10px" display="flex" flexWrap="wrap" gap={2}>
-              {result.availableTimes.map((time, index) => (
-                <Button key={index} onClick={() => handleTimeChange(time)} bg={selectedTime === time ? "purple.400" : "gray.100"} color={selectedTime === time ? "white" : "black"}>
-                  {time}
-                </Button>
-              ))}
-            </Box>
-          )}
-        </Box>
+       <DateTime result={result} />
       </Card>
     </>
   );

@@ -23,8 +23,6 @@ export const searchResults = [
         img: '/images/img3.png',
         showDate: false,
         showTime: false,
-        availableDates: [],
-        availableTimes: [],
     },
     {
         name: "Steven Weiner, MD",
@@ -40,8 +38,6 @@ export const searchResults = [
         showDate: true,
         showTime: false,
         cantBook: true,
-        availableDates: ["Mon 8", "Tue 9", "Wed 10", "Thu 11", "Fri 12"],
-        availableTimes: [],
     },
     {
         name: "DR. Anesa Dahly",
@@ -56,8 +52,6 @@ export const searchResults = [
         img: '/images/img1.png',
         showDate: true,
         showTime: true,
-        availableDates: ["Mon 8", "Tue 9", "Wed 10", "Thu 11", "Fri 12"],
-        availableTimes: ["8:00 AM", "8:20 AM", "9:00 AM", "9:30 AM", "10:15 AM", "11:00 AM"],
     },
     {
         name: "Olivia Rhyne",
@@ -73,8 +67,6 @@ export const searchResults = [
         showDate: true,
         showTime: false,
         cantBook: true,
-        availableDates: ["Mon 8", "Tue 9", "Wed 10", "Thu 11", "Fri 12"],
-        availableTimes: [],
     }
 ];
 
@@ -95,4 +87,14 @@ export const languageSpoken = [
     { value: 'deutsch', label: 'Deutsch' },
     { value: 'french', label: 'French' },
     { value: 'chinese', label: 'Chinese' },
+]
+
+export const dateNdTime = [
+    { date: "8", day: "MON", time: ['8:00 AM'] },
+    { date: "9", day: "TUE", time: ['8:00 AM','8:20 AM','9:00 AM','9:30 AM','10:15 AM','11:00 AM',] },
+    { date: "10", day: "WED", time: ['8:00 AM','8:20 AM','9:00 AM','9:30 AM','10:15 AM','11:00 AM',] },
+    { date: "11", day: "THU", time: ['-','8:20 AM','9:00 AM'] },
+    { date: "12", day: "FRI", time: ['8:00 AM','-','9:00 AM'] },
+    { date: "13", day: "SAT", time: [] },
+    { date: "14", day: "SUN", time: [] },
 ]
