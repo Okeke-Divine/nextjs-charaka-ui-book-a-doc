@@ -1,3 +1,4 @@
+import { GoTriangleDown } from "react-icons/go";
 import { TfiTarget } from "react-icons/tfi";
 import { IoShieldOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
@@ -79,6 +80,7 @@ export default function Header() {
                             placeholder="Agile Health Insurance"
                             border="none"
                             pl={-5}
+                            icon={<Icon as={GoTriangleDown} />}
                             _focus={{
                                 border: "none",
                                 boxShadow: "none",
