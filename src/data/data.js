@@ -37,6 +37,7 @@ export const searchResults = [
         img: '/images/img4.png',
         showDate: true,
         showTime:false,
+        cantBook: true
     },
     {
         name: "DR. Anesa Dahly",
