@@ -2,7 +2,7 @@ import { Box, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Text, Flex, I
 import { useState } from 'react';
 
 const RatingComponent = () => {
-  const [sliderValue, setSliderValue] = useState(1);
+  const [sliderValue, setSliderValue] = useState(4);
 
   const handleSliderChange = (value) => {
     setSliderValue(value);
@@ -33,7 +33,6 @@ const RatingComponent = () => {
       <Slider
         aria-label="rating-slider"
         value={sliderValue}
-        defaultValue={4}
         min={1}
         max={5}
         step={1}
