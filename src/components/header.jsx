@@ -18,7 +18,7 @@ export default function Header() {
             <Flex justify="space-between" align="center">
                 <Flex align="center" gap="2">
                     <Logo />
-                    <Text fontSize="2xl" fontWeight="bold">
+                    <Text fontSize="2xl" fontWeight="bold" display={{ base: "none", lg: "block" }}>
                         BookADoc
                     </Text>
                 </Flex>
@@ -32,7 +32,7 @@ export default function Header() {
                     <Link href="#">Contact Us</Link>
                 </Box>
                 <Flex gap="4">
-                    <Button bg="white" borderRadius={"full"} px="20px" py="7px">Sign In</Button>
+                    <Button bg="white" borderRadius={"full"} px="20px" py="7px" display={{ base: "none", lg: "block" }}>Sign In</Button>
                     <Button bg="white" borderRadius={"full"} px="20px" py="7px">Clinic Sign Up</Button>
                 </Flex>
             </Flex>
