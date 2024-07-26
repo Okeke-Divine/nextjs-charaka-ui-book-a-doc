@@ -78,7 +78,6 @@ export default function Header() {
                         <Select
                             placeholder="Agile Health Insurance"
                             border="none"
-                            _focus={{ border: "none" }}
                             pl={-5}
                             _focus={{
                                 border: "none",
