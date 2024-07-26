@@ -11,6 +11,7 @@ import {
     Stack,
 } from "@chakra-ui/react";
 import { useState } from 'react';
+import RatingComponent from './RatingComponent';
 
 
 const multiSelectStyles = {
@@ -180,6 +181,17 @@ export default function SearchFilter() {
             </Box>
 
             {/* rating/review */}
+
+            <Box mt="20px">
+
+                <Text fontWeight="bold" fontSize={"16px"}>
+                    Rating / Review
+                </Text>
+
+                <Box mt="10px">
+                    <RatingComponent />
+                </Box>
+            </Box>
 
             {/* Language Spoken */}
             <Box mt="20px">
