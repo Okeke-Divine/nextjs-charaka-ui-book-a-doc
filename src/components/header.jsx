@@ -43,12 +43,20 @@ export default function Header() {
                     p="3"
                     gap="2"
                 >
-                    <Icon as={CiSearch} mr={2} />
-                    <Input
-                        placeholder="Migraine"
-                        border="none"
-                        _focus={{ border: "none" }}
-                    />
+                    <Box w="full" display={"flex"} alignItems={"center"}>
+                        <Icon as={CiSearch} mr={2} />
+                        <Input
+                            placeholder="Search..."
+                            border="none"
+                            w="full"
+                            _focus={{
+                                border: "none",
+                                boxShadow: "none",
+                                outline: "none",
+                            }}
+                            pl={-3}
+                        />
+                    </Box>
                     <Divider orientation="vertical" mx={2} />
                     <Box w="full" display={"flex"} alignItems={"center"}>
                         <Icon as={TfiTarget} mr={2} />
@@ -56,22 +64,33 @@ export default function Header() {
                             placeholder="40361"
                             border="none"
                             w="full"
-                            _focus={{ border: "none" }}
-                            pl={-4}
+                            _focus={{
+                                border: "none",
+                                boxShadow: "none",
+                                outline: "none",
+                            }}
+                            pl={-3}
                         />
                     </Box>
                     <Divider orientation="vertical" mx={2} />
-                    <Icon as={IoShieldOutline} mr={2} />
-                    <Select
-                        placeholder="Agile Health Insurance"
-                        border="none"
-                        _focus={{ border: "none" }}
-                        pl={4}
-                    >
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </Select>
+                    <Box w="full" display={"flex"} alignItems={"center"}>
+                        <Icon as={IoShieldOutline} mr={-2} />
+                        <Select
+                            placeholder="Agile Health Insurance"
+                            border="none"
+                            _focus={{ border: "none" }}
+                            pl={-5}
+                            _focus={{
+                                border: "none",
+                                boxShadow: "none",
+                                outline: "none",
+                            }}
+                        >
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </Select>
+                    </Box>
                     <Button
                         width={"full"}
                         borderRadius="full"
@@ -79,7 +98,7 @@ export default function Header() {
                         py="7px"
                         background={"brand.pink"}
                         color="white"
-                        fontSize={"15px"}
+                        fontSize={"10px"}
                         maxWidth={"150px"}
                     >
                         SEARCH
