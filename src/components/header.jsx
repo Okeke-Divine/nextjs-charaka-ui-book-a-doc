@@ -21,7 +21,7 @@ export default function Header() {
                         BookADoc
                     </Text>
                 </Flex>
-                <Flex gap="4" display={{ sm: "none", lg: "flex" }}>
+                <Flex gap="4" display={{ sm: "hidden", lg: "flex" }}>
                     <Link href="#">Services <ChevronDownIcon /> </Link>
                     <Link href="#">Doctors <ChevronDownIcon /> </Link>
                     <Link href="#">About Us</Link>

@@ -1,9 +1,24 @@
 import { HiMiniMapPin } from "react-icons/hi2";
-import { CalendarIcon, InfoOutlineIcon, StarIcon } from "@chakra-ui/icons"
-import { Link } from "@chakra-ui/next-js"
-import { Avatar, AvatarGroup, Box, Button, Card, Divider, Icon, Text } from "@chakra-ui/react"
+import { CalendarIcon, InfoOutlineIcon, StarIcon } from "@chakra-ui/icons";
+import { Link } from "@chakra-ui/next-js";
+import { Avatar, AvatarGroup, Box, Button, Card, Divider, Icon, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import DoctorPicure from "./DoctorPicure";
 
 export default function SearchResult({ result }) {
+
+  const [isLiked, setIsLiked] = useState(result.liked);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const handleTimeChange = (time) => {
+    setSelectedTime(time);
+  };
+
   return (
     <>
       <Card
@@ -17,34 +32,34 @@ export default function SearchResult({ result }) {
         _hover={{ borderColor: "purple.400", boxShadow: "lg" }}
       >
 
-        {result.hasAppointment ? (<>
+        {result.hasAppointment && (
           <Box mb="20px" bg="brand.peachPuff" display={"flex"} gap="2" flexWrap={"wrap"} alignItems={"center"} px="2" py="1" borderRadius={"20px"}>
             <InfoOutlineIcon color="brand.peachPuff2" position={"relative"} top="0px" />
             <Text fontWeight={"bold"} color={"brand.peachPuff2"} fontSize={"15px"}>
-              You have an exisiting appointment with this doctor. <Link href="#" color="gray.500">View Detials</Link>
+              You have an existing appointment with this doctor. <Link href="#" color="gray.500">View Details</Link>
             </Text>
           </Box>
-        </>) : ""}
+        )}
 
-        {result.bookedInThePast ? (<>
+        {result.bookedInThePast && (
           <Box mb="20px" display={"flex"} gap="2" flexWrap={"wrap"} alignItems={"center"} px="2" py="1" borderRadius={"20px"}>
             <InfoOutlineIcon color="gray.500" position={"relative"} top="0px" />
             <Text fontWeight={"bold"} color={"gray.500"} fontSize={"15px"}>
               You booked this provider in the past.
             </Text>
           </Box>
-        </>) : ""}
+        )}
 
         <Box display={{ sm: "block", lg: "flex" }} gap={5}>
           <Box flex={{ base: "1", lg: "" }} minWidth={"250px"}>
-            <Avatar bg="gray.200" src={result.img} name={result.name} w='full' h='full' borderRadius={"20px"} minHeight={"200px"} />
+            <DoctorPicure result={result} />
             <Divider h={{ sm: "20px", lg: "0px" }} />
           </Box>
 
           <Box display={{ sm: "block", lg: "flex" }} justifyContent={"space-between"} flex={{ base: "1", lg: "5" }}>
             <Box>
               <Text fontWeight={"bold"} fontSize={"20px"}>{result.name}</Text>
-              <Box color="gray.600" fontWeight={550} >
+              <Box color="gray.600" fontWeight={550}>
                 <Text fontSize={"16px"} mt="2px">{result.career}</Text>
                 <Box mt="10px" display="flex" gap={1} alignItems={"center"}>
                   <Icon as={HiMiniMapPin} position={"relative"} top="-2px" />
@@ -80,26 +95,44 @@ export default function SearchResult({ result }) {
                     {result.avartarText}
                   </Box>
                 </Box>
-
               </Box>
             </Box>
 
-            <Box gap={2} justifyContent={"end"} display={"flex"} flex={{ base: "1", lg: "2" }}>
+            <Box gap={2} justifyContent={"end"} display={"flex"} flex={{ base: "1", lg: "2" }} flexWrap={"wrap"}>
 
               <Button display={"flex"} gap={2} bg="white" borderRadius={"full"} border="1px" borderColor={"gray.100"}><InfoOutlineIcon /> More Info</Button>
 
-              {result?.cantBook == true ? "" : (<>
+              {result?.cantBook === true ? "" : (
                 <Button display={"flex"} gap={2} bg="brand.charcoal" color="white" borderRadius={"full"} border="1px" borderColor={"gray.100"}
                   _hover={{ bg: "black" }}
                 ><CalendarIcon /> Book {result.hasAppointment ? "Again" : "Appointment"}</Button>
-              </>)}
+              )}
 
             </Box>
-
           </Box>
+        </Box>
 
+        {/* Date and Time Selection Component */}
+        <Box mt="20px">
+          <Text fontWeight={"bold"} fontSize={"16px"} mb="10px">Select Date and Time:</Text>
+          <Box display="flex" flexWrap="wrap" gap={2}>
+            {result.availableDates.map((date, index) => (
+              <Button key={index} onClick={() => handleDateChange(date)} bg={selectedDate === date ? "purple.400" : "gray.100"} color={selectedDate === date ? "white" : "black"}>
+                {date}
+              </Button>
+            ))}
+          </Box>
+          {selectedDate && (
+            <Box mt="10px" display="flex" flexWrap="wrap" gap={2}>
+              {result.availableTimes.map((time, index) => (
+                <Button key={index} onClick={() => handleTimeChange(time)} bg={selectedTime === time ? "purple.400" : "gray.100"} color={selectedTime === time ? "white" : "black"}>
+                  {time}
+                </Button>
+              ))}
+            </Box>
+          )}
         </Box>
       </Card>
     </>
-  )
+  );
 }

@@ -22,7 +22,9 @@ export const searchResults = [
         hasAppointment: true,
         img: '/images/img3.png',
         showDate: false,
-        showTime:false,
+        showTime: false,
+        availableDates: [],
+        availableTimes: [],
     },
     {
         name: "Steven Weiner, MD",
@@ -36,8 +38,10 @@ export const searchResults = [
         hasAppointment: false,
         img: '/images/img4.png',
         showDate: true,
-        showTime:false,
-        cantBook: true
+        showTime: false,
+        cantBook: true,
+        availableDates: ["Mon 8", "Tue 9", "Wed 10", "Thu 11", "Fri 12"],
+        availableTimes: [],
     },
     {
         name: "DR. Anesa Dahly",
@@ -51,13 +55,15 @@ export const searchResults = [
         hasAppointment: false,
         img: '/images/img1.png',
         showDate: true,
-        showTime:true,
+        showTime: true,
+        availableDates: ["Mon 8", "Tue 9", "Wed 10", "Thu 11", "Fri 12"],
+        availableTimes: ["8:00 AM", "8:20 AM", "9:00 AM", "9:30 AM", "10:15 AM", "11:00 AM"],
     },
     {
         name: "Olivia Rhyne",
         career: "Primary Care Doctor",
         address: "52087 Toney Neck Suite 296",
-        rating:"3.62",
+        rating: "3.62",
         reviewsCount: 59,
         avartarText: "Dyson, and 3+ insurance accepted",
         liked: false,
@@ -65,10 +71,12 @@ export const searchResults = [
         hasAppointment: false,
         img: '',
         showDate: true,
-        showTime:false,
-        cantBook: true
+        showTime: false,
+        cantBook: true,
+        availableDates: ["Mon 8", "Tue 9", "Wed 10", "Thu 11", "Fri 12"],
+        availableTimes: [],
     }
-]
+];
 
 export const visitReasons = [
     { value: 'anxiety', label: 'Anxiety' },
