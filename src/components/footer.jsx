@@ -1,6 +1,6 @@
 import { Link } from "@chakra-ui/next-js";
 import { Box, Divider, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-import Logo from "./Logo";
+import Logo from "./logo";
 
 export default function Footer() {
     return (
