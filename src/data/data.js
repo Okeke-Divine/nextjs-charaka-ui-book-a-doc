@@ -43,7 +43,7 @@ export const searchResults = [
         avartarText: "Dyson, and 2+ insurance acepted",
         liked: true,
         bookedInThePast: false,
-        hasAppointment: true,
+        hasAppointment: false,
         img: '/images/img1.png',
     },
     {
@@ -54,7 +54,7 @@ export const searchResults = [
         reviewsCount: 99,
         avartarText: "Dyson, and 2+ insurance acepted",
         liked: false,
-        bookedInThePast: true,
+        bookedInThePast: false,
         hasAppointment: false,
         img: '',
     }

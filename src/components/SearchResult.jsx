@@ -1,6 +1,6 @@
 import { InfoOutlineIcon } from "@chakra-ui/icons"
 import { Link } from "@chakra-ui/next-js"
-import { Avatar, Box, Card, Text } from "@chakra-ui/react"
+import { Avatar, AvatarGroup, Box, Card, Text } from "@chakra-ui/react"
 
 export default function SearchResult({ result }) {
   return (
@@ -25,9 +25,9 @@ export default function SearchResult({ result }) {
           </Box>
         </>) : ""}
 
-        <Box display={{ sm: "block", lg: "flex" }} gap={10} mt="10px">
+        <Box display={{ sm: "block", lg: "flex" }} gap={5} mt="10px">
           <Box flex={{ base: "1", lg: "1" }}>
-            <Avatar bg="gray.200" src={result.img} name={result.name} w='full' h='full' borderRadius={"20px"} />
+            <Avatar bg="gray.200" src={result.img} name={result.name} w='full' h='full' borderRadius={"20px"} mb={{ sm: "10px", lg: "0px" }} />
           </Box>
           <Box flex={{ base: "1", lg: "5" }}>
             <Text fontWeight={"bold"} fontSize={"20px"}>{result.name}</Text>
@@ -36,6 +36,20 @@ export default function SearchResult({ result }) {
               <Box>
                 <Text fontSize={"16px"}>{result.address}</Text>
               </Box>
+              {/* review */}
+
+              <Box mt="5px" display={"flex"} gap={2} flexWrap={"wrap"} alignItems={"center"}>
+                <AvatarGroup size='sm' max={2}>
+                  <Avatar name='Ryan Florence' src='/images/img1.png' />
+                  <Avatar name='Ryan Florence' src='/images/img2.png' />
+                  <Avatar name='Ryan Florence' src='/images/img3.png' />
+                  <Avatar name='Ryan Florence' src='/images/img4.png' />
+                </AvatarGroup>
+                <Box>
+                  {result.avartarText}
+                </Box>
+              </Box>
+
             </Box>
           </Box>
         </Box>
