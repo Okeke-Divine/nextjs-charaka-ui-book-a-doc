@@ -24,9 +24,8 @@ export default function SearchResult({ result }) {
       >
 
         {result.hasAppointment && (
-          <Box mb="20px" bg="brand.peachPuff" display={"flex"} gap="2" flexWrap={"wrap"} alignItems={"center"} px="2" py="1" borderRadius={"20px"}>
-            <InfoOutlineIcon color="brand.peachPuff2" position={"relative"} top="0px" />
-            <Text fontWeight={"bold"} color={"brand.peachPuff2"} fontSize={"15px"}>
+          <Box mb="20px" bg="brand.peachPuff" display={"block"} gap="2" flexWrap={"wrap"} alignItems={"center"} px="2" py="1" borderRadius={"20px"}>
+            <InfoOutlineIcon color="brand.peachPuff2" position={"relative"} top="0px" /> <Text as="span" fontWeight={"bold"} color={"brand.peachPuff2"} fontSize={"15px"}>
               You have an existing appointment with this doctor. <Link href="#" color="gray.500">View Details</Link>
             </Text>
           </Box>
