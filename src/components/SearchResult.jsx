@@ -1,6 +1,7 @@
+import { HiMiniMapPin } from "react-icons/hi2";
 import { CalendarIcon, InfoOutlineIcon, StarIcon } from "@chakra-ui/icons"
 import { Link } from "@chakra-ui/next-js"
-import { Avatar, AvatarGroup, Box, Button, Card, Text } from "@chakra-ui/react"
+import { Avatar, AvatarGroup, Box, Button, Card, Divider, Icon, Text } from "@chakra-ui/react"
 
 export default function SearchResult({ result }) {
   return (
@@ -35,8 +36,9 @@ export default function SearchResult({ result }) {
         </>) : ""}
 
         <Box display={{ sm: "block", lg: "flex" }} gap={5}>
-          <Box flex={{ base: "1", lg: "" }}>
-            <Avatar bg="gray.200" src={result.img} name={result.name} w='full' h='full' borderRadius={"20px"} mb={{ sm: "10px", lg: "0px" }} />
+          <Box flex={{ base: "1", lg: "" }} minWidth={"250px"}>
+            <Avatar bg="gray.200" src={result.img} name={result.name} w='full' h='full' borderRadius={"20px"} minHeight={"200px"} />
+            <Divider h={{ sm: "20px", lg: "0px" }} />
           </Box>
 
           <Box display={{ sm: "block", lg: "flex" }} justifyContent={"space-between"} flex={{ base: "1", lg: "5" }}>
@@ -44,7 +46,8 @@ export default function SearchResult({ result }) {
               <Text fontWeight={"bold"} fontSize={"20px"}>{result.name}</Text>
               <Box color="gray.600" fontWeight={550} >
                 <Text fontSize={"16px"} mt="2px">{result.career}</Text>
-                <Box mt="10px">
+                <Box mt="10px" display="flex" gap={1} alignItems={"center"}>
+                  <Icon as={HiMiniMapPin} position={"relative"} top="-2px" />
                   <Text fontSize={"16px"}>{result.address}</Text>
                 </Box>
                 {/* review */}

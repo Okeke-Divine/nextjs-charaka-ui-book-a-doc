@@ -1,4 +1,7 @@
-import { Box, Button, Divider, Flex, Input, Link, Select, Spacer, Text } from "@chakra-ui/react";
+import { TfiTarget } from "react-icons/tfi";
+import { IoShieldOutline } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
+import { Box, Button, Divider, Flex, Icon, Input, Link, Select, Spacer, Text } from "@chakra-ui/react";
 import Logo from "./Logo";
 import { ArrowDownIcon, ChevronDownIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
 
@@ -39,7 +42,7 @@ export default function Header() {
                     align="center"
                     p="3"
                 >
-                    <Search2Icon />
+                    <Icon as={CiSearch} />
                     <Input
                         placeholder="Migraine"
                         border="none"
@@ -47,6 +50,7 @@ export default function Header() {
                         pl={4}
                     />
                     <Divider orientation="vertical" />
+                    <Icon as={TfiTarget} />
                     <Input
                         placeholder="40361"
                         border="none"
@@ -54,6 +58,7 @@ export default function Header() {
                         pl={4}
                     />
                     <Divider orientation="vertical" />
+                    <Icon as={IoShieldOutline} />
                     <Select
                         placeholder="Agile Health Insurance"
                         border="none"

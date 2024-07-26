@@ -16,7 +16,7 @@ export default function Footer() {
                     </Box>
                 </Box>
                 <Box>
-                    <Text pb="10px">SERVICES FOR PATIENTS</Text>
+                    <Text pt="15px" pb="20px">SERVICES FOR PATIENTS</Text>
                     <Flex direction="column" gap="2">
                         <Link href="#">Doctor Search</Link>
                         <Link href="#">Appointment Bookings</Link>
@@ -24,7 +24,7 @@ export default function Footer() {
                     </Flex>
                 </Box>
                 <Box>
-                    <Text pb="10px">SERVICES FOR DOCTORS</Text>
+                    <Text pt="15px" pb="20px">SERVICES FOR DOCTORS</Text>
                     <Flex direction="column" gap="2">
                         <Link href="#">Profile Listing</Link>
                         <Link href="#">Appointment Management</Link>
@@ -32,7 +32,7 @@ export default function Footer() {
                     </Flex>
                 </Box>
                 <Box>
-                    <Text pb="10px">CONTACT US</Text>
+                    <Text pt="15px" pb="20px">CONTACT US</Text>
                     <Flex direction="column" gap="2">
                         <Link href="#">1-888-123-4567</Link>
                         <Link href="#">help@bookadoc.com</Link>
